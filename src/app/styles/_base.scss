@@ -1,0 +1,28 @@
+@use "sass:color";
+
+$theme-main__color_text: #fff;
+$theme-main__color_background: #111111;
+
+@mixin colorSet($property, $colorMap) {
+	&_color {
+		@each $item, $color in $colorMap {
+			&_#{$item} {
+				#{$property}: $color;
+			}
+		}
+	}
+}
+
+@mixin linearGradientSet($property, $angle, $colorMap) {
+	&_color {
+		@each $item, $color in $colorMap {
+			&_#{$item} {
+				#{$property}: linear-gradient(
+					$angle,
+					$color,
+					color.scale($color, $lightness: 20%)
+				);
+			}
+		}
+	}
+}

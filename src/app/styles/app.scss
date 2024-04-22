@@ -1,0 +1,56 @@
+@import "app/assets/fonts/CormorantGaramond/stylesheet.css";
+
+@import "app/styles/base";
+
+:root {
+	font-family: "Cormorant Garamond", system-ui, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	font-size: 16px;
+
+	color: $theme-main__color_text;
+
+	background-color: $theme-main__color_background;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	box-sizing: border-box;
+
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+
+	min-height: 100vh;
+
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	font: inherit;
+	color: $theme-main__color_text;
+
+	text-decoration: underline;
+}
+
+a:hover {
+	opacity: 70%;
+}
+
+#root {
+	max-width: 1440px;
+	width: 100%;
+	min-height: 828px;
+
+	margin: 0;
+	padding: 0;
+}
+
