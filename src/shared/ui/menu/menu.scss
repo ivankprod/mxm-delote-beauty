@@ -1,0 +1,29 @@
+@import "app/styles/base";
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 80px;
+
+	list-style-type: none;
+
+	&__alink {
+		font-weight: 600;
+		line-height: 130%;
+
+		padding-bottom: 2px;
+
+		border-bottom: 1px solid transparent;
+
+		&_active {
+			color: $theme-main__color_text-active;
+
+			border-color: $theme-main__color_text-active;
+		}
+	}
+
+	& .logo {
+		margin: 0 40px;
+	}
+}

@@ -6,7 +6,7 @@
 	font-family: "Cormorant Garamond", system-ui, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 18px;
 
 	color: $theme-main__color_text;
 
@@ -38,19 +38,75 @@ a {
 	font: inherit;
 	color: $theme-main__color_text;
 
-	text-decoration: underline;
+	text-decoration: none;
+
+	transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 
-a:hover {
-	opacity: 70%;
-}
+button {
+	appearance: none;
 
-#root {
-	max-width: 1440px;
-	width: 100%;
-	min-height: 828px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	margin: 0;
 	padding: 0;
+
+	font: inherit;
+
+	background: transparent;
+
+	border: 0;
+	outline: 0;
+
+	cursor: pointer;
+
+	transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+
+	&[disabled] {
+		pointer-events: none;
+	}
 }
 
+button:hover,
+a.block-link:hover {
+	opacity: 70%;
+}
+
+a:hover {
+	color: $theme-main__color_text-active;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+
+	min-height: 100vh;
+	min-width: 1296px;
+
+	margin: 0 auto;
+	padding: 0;
+
+	& .content {
+		display: flex;
+		flex-direction: column;
+		gap: 120px;
+		flex-grow: 1;
+		flex-shrink: 0;
+	}
+
+	& .logo {
+		display: flex;
+	}
+
+	& .link-instagram {
+		display: flex;
+
+		height: 26px;
+		width: 26px;
+
+		background-image: url("app/assets/svg/instagram.svg");
+		background-repeat: no-repeat;
+	}
+}

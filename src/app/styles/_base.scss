@@ -1,6 +1,8 @@
 @use "sass:color";
 
 $theme-main__color_text: #fff;
+$theme-main__color_text-active: #cdaa7d;
+$theme-main__color_text-active_semi: #cdaa7d80;
 $theme-main__color_background: #111111;
 
 @mixin colorSet($property, $colorMap) {

@@ -1,0 +1,16 @@
+.content_error {
+	align-items: center;
+	justify-content: center;
+}
+
+.error__text {
+	width: auto;
+
+	font-size: 44px;
+
+	&_size {
+		&_large {
+			font-size: 64px;
+		}
+	}
+}

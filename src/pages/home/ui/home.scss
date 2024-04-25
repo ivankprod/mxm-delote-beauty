@@ -1,0 +1,78 @@
+.first-screen {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 927px;
+
+	&__text {
+		margin-top: -70px;
+
+		font-size: 72px;
+		font-weight: 700;
+		line-height: 120%;
+		text-align: center;
+	}
+
+	& .mouse-down {
+		display: flex;
+		align-items: center;
+
+		position: absolute;
+
+		margin-top: 620px;
+
+		&__icon {
+			display: flex;
+
+			margin-right: 20px;
+		}
+
+		&__text {
+			font-weight: 700;
+			line-height: 140%;
+		}
+	}
+}
+
+.first-screen::before {
+	content: "";
+
+	display: block;
+	position: absolute;
+	inset: 0;
+
+	height: 1038px;
+
+	background-image: url("app/assets/images/bgc_home.jpg");
+	background-position: center top;
+
+	z-index: -1;
+}
+
+.content {
+	&__section {
+		&_about {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			& .about__text {
+				width: 856px;
+
+				margin-top: 60px;
+
+				font-size: 27px;
+				font-weight: 700;
+				line-height: 130%;
+				text-align: center;
+			}
+		}
+
+		&_services {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 44px;
+		}
+	}
+}

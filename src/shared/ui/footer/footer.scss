@@ -1,0 +1,43 @@
+.footer {
+	flex-grow: 0;
+
+	&__top-block {
+		display: flex;
+		justify-content: space-between;
+
+		padding: 80px 0;
+
+		border-top: 1px solid #ffffff80;
+		border-bottom: 1px solid #ffffff80;
+	}
+
+	&__section {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	&__bottom-block {
+		padding: 30px 0;
+
+		color: #ffffff80;
+
+		font-weight: 700;
+		line-height: 140%;
+		text-align: center;
+	}
+}
+
+.section {
+	&__row {
+		line-height: 130%;
+
+		&-caption {
+			margin-bottom: 10px;
+
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 120%;
+		}
+	}
+}

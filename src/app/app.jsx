@@ -9,7 +9,7 @@ import {
 
 import "app/styles/app.scss";
 
-import MainLayout from "shared/ui/layout";
+import Layout from "shared/ui/layout";
 
 import ErrorPage from "pages/error";
 import HomePage from "pages/home";
@@ -18,12 +18,12 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route
 			path="/mxm-delote-beauty"
-			element={<MainLayout />}
+			element={<Layout />}
 			errorElement={<ErrorPage />}
 		>
-			<Route errorElement={<ErrorPage />}>
+			{/*<Route errorElement={<ErrorPage />}>*/}
 				<Route index element={<HomePage />} />
-			</Route>
+			{/*</Route>*/}
 		</Route>
 	)
 );

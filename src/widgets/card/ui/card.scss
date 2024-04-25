@@ -1,0 +1,43 @@
+@import "app/styles/base";
+
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	margin-bottom: 40px;
+
+	&_type {
+		&_bordered {
+			& .card__image-wrapper::before {
+				content: "";
+
+				display: block;
+				position: absolute;
+				top: -20px;
+				left: 20px;
+
+				height: 100%;
+				width: 100%;
+
+				border: 1px solid $theme-main__color_text-active_semi;
+
+				z-index: -1;
+			}
+		}
+	}
+
+	&__image-wrapper {
+		display: flex;
+
+		position: relative;
+
+		width: fit-content;
+	}
+
+	&__caption {
+		font-size: 30px;
+		font-weight: 400;
+		line-height: 120%;
+	}
+}
