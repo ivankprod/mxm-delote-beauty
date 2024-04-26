@@ -1,3 +1,3 @@
 export { default } from "./ui";
 export * from "./ui";
-export * as homeModel from "./model";
+//export * as tabsModel from "./model";

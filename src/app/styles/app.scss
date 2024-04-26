@@ -78,6 +78,13 @@ a:hover {
 	color: $theme-main__color_text-active;
 }
 
+h1,
+h2,
+h3 {
+	font-weight: 700;
+	line-height: 120%;
+}
+
 #root {
 	display: flex;
 	flex-direction: column;

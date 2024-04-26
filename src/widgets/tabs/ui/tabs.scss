@@ -1,0 +1,15 @@
+.tabs {
+	display: flex;
+	flex-direction: column;
+
+	gap: 55px;
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 60px;
+
+		list-style-type: none;
+	}
+}

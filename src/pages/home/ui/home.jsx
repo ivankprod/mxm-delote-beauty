@@ -1,14 +1,14 @@
+import { HomeServices, HomePortfolio } from "pages/home/model";
+
 import Card, { cardModel } from "widgets/card";
+import Tabs from "widgets/tabs";
 
 import svgMouse from "app/assets/svg/mouse.svg";
 import svgQuotes from "app/assets/svg/quotes.svg";
-
-import imgServicesHairdress from "app/assets/images/services/hairdress.jpg";
-import imgServicesManicure from "app/assets/images/services/manicure.jpg";
-import imgServicesPedicure from "app/assets/images/services/pedicure.jpg";
-import imgServicesCosmetology from "app/assets/images/services/cosmetology.jpg";
-import imgServicesBodyEsthetician from "app/assets/images/services/body-esthetician.jpg";
-import imgServicesMakeUp from "app/assets/images/services/make-up.jpg";
+import svgLogotypeKevinMurphy from "app/assets/svg/logotypes/kevin-murphy.svg";
+import svgLogotypeOribe from "app/assets/svg/logotypes/oribe.svg";
+import svgLogotypeAlterna from "app/assets/svg/logotypes/alterna.svg";
+import svgLogotypeAldoCoppola from "app/assets/svg/logotypes/aldo-coppola.svg";
 
 import "./home.scss";
 
@@ -20,7 +20,7 @@ import "./home.scss";
 export const HomePage = () => {
 	return (
 		<main className="content">
-			<section className="content__section first-screen">
+			<section className="content__section content__section_first-screen">
 				<p className="first-screen__text">
 					Салон красоты
 					<br />
@@ -55,96 +55,74 @@ export const HomePage = () => {
 				</p>
 			</section>
 			<section className="content__section content__section_services">
-				<Card
-					type={cardModel.CARD_TYPE.bordered}
-					image={
-						<img
-							src={imgServicesHairdress}
-							height={300}
-							width={396}
-							draggable={false}
-						/>
-					}
-				>
-					<p className="card__caption">
-						Парикмахерские услуги
-					</p>
-				</Card>
-				<Card
-					type={cardModel.CARD_TYPE.bordered}
-					image={
-						<img
-							src={imgServicesManicure}
-							height={300}
-							width={396}
-							draggable={false}
-						/>
-					}
-				>
-					<p className="card__caption">
-						Маникюр
-					</p>
-				</Card>
-				<Card
-					type={cardModel.CARD_TYPE.bordered}
-					image={
-						<img
-							src={imgServicesPedicure}
-							height={300}
-							width={396}
-							draggable={false}
-						/>
-					}
-				>
-					<p className="card__caption">
-						Педикюр
-					</p>
-				</Card>
-				<Card
-					type={cardModel.CARD_TYPE.bordered}
-					image={
-						<img
-							src={imgServicesCosmetology}
-							height={300}
-							width={396}
-							draggable={false}
-						/>
-					}
-				>
-					<p className="card__caption">
-						Косметология
-					</p>
-				</Card>
-				<Card
-					type={cardModel.CARD_TYPE.bordered}
-					image={
-						<img
-							src={imgServicesBodyEsthetician}
-							height={300}
-							width={396}
-							draggable={false}
-						/>
-					}
-				>
-					<p className="card__caption">
-						Эстетист по телу
-					</p>
-				</Card>
-				<Card
-					type={cardModel.CARD_TYPE.bordered}
-					image={
-						<img
-							src={imgServicesMakeUp}
-							height={300}
-							width={396}
-							draggable={false}
-						/>
-					}
-				>
-					<p className="card__caption">
-						Визаж
-					</p>
-				</Card>
+				{HomeServices.map(({ id, title, image }) => (
+					<Card
+						key={id}
+						type={cardModel.CARD_TYPE.bordered}
+						image={
+							<img
+								src={image}
+								height={300}
+								width={396}
+								draggable={false}
+							/>
+						}
+					>
+						<p className="card__caption">{title}</p>
+					</Card>
+				))}
+			</section>
+			<section className="content__section content__section_logotypes">
+				<div className="logotype">
+					<img
+						height={108}
+						src={svgLogotypeKevinMurphy}
+						draggable={false}
+					/>
+				</div>
+				<div className="logotype">
+					<img
+						height={120}
+						src={svgLogotypeOribe}
+						draggable={false}
+					/>
+				</div>
+				<div className="logotype">
+					<img
+						height={98}
+						src={svgLogotypeAlterna}
+						draggable={false}
+					/>
+				</div>
+				<div className="logotype">
+					<img
+						height={108}
+						src={svgLogotypeAldoCoppola}
+						draggable={false}
+					/>
+				</div>
+			</section>
+			<section className="content__section content__section_portfolio">
+				<h1 className="portfolio__h1">Наши работы</h1>
+				<Tabs
+					data={HomePortfolio.map((portfolio) => ({
+						id: portfolio.id,
+						title: portfolio.title,
+						content: portfolio.images.map((image) => (
+							<Card
+								key={image}
+								type={cardModel.CARD_TYPE.borderless}
+								image={<img
+									src={image}
+									height={416}
+									width={416}
+									draggable={false}
+								/>}
+							/>
+						)),
+						contentClassName: "portfolio__content"
+					}))}
+				/>
 			</section>
 		</main>
 	);

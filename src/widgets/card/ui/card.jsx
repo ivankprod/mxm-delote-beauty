@@ -6,7 +6,7 @@ import { CARD_TYPE } from "widgets/card/model";
 import "./card.scss";
 
 /**
- * Хедер
+ * Карточка
  *
  * @component
  *
