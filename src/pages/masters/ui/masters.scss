@@ -1,0 +1,29 @@
+.content {
+	&_masters {
+		& .content__section {
+			flex-direction: column;
+			gap: 100px;
+
+			&_masters {
+				& .masters {
+					&__h1 {
+						font-size: 48px;
+						text-align: center;
+					}
+
+					&__list {
+						display: grid;
+						grid-template-columns: 1fr 1fr 1fr;
+						gap: 44px;
+
+						& .card {
+							gap: 30px;
+
+							margin-bottom: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

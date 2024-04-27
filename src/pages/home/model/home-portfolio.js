@@ -69,5 +69,3 @@ export const HomePortfolio = [
 		]
 	}
 ];
-
-export default HomePortfolio;

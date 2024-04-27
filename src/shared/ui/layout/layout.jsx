@@ -24,7 +24,7 @@ export const Layout = ({ children = undefined }) => {
 };
 
 Layout.propTypes = {
-	children: PropTypes.node,
+	children: PropTypes.node
 };
 
 export default Layout;

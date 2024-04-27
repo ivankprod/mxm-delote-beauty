@@ -34,5 +34,3 @@ export const HomeServices = [
 		image: imgServicesMakeUp
 	}
 ];
-
-export default HomeServices;

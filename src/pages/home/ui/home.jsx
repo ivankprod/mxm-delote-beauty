@@ -1,3 +1,7 @@
+import { useContext, useEffect } from "react";
+
+import ScopeContext from "app/context";
+
 import { HomeServices, HomePortfolio } from "pages/home/model";
 
 import Card, { cardModel } from "widgets/card";
@@ -18,8 +22,14 @@ import "./home.scss";
  * @component
  */
 export const HomePage = () => {
+	const { scope, setScope } = useContext(ScopeContext);
+
+	useEffect(() => {
+		setScope("home");
+	}, []);
+
 	return (
-		<main className="content">
+		<main className={`content content_${scope}`}>
 			<section className="content__section content__section_first-screen">
 				<p className="first-screen__text">
 					Салон красоты
@@ -112,15 +122,17 @@ export const HomePage = () => {
 							<Card
 								key={image}
 								type={cardModel.CARD_TYPE.borderless}
-								image={<img
-									src={image}
-									height={416}
-									width={416}
-									draggable={false}
-								/>}
+								image={
+									<img
+										src={image}
+										height={416}
+										width={416}
+										draggable={false}
+									/>
+								}
 							/>
 						)),
-						contentClassName: "portfolio__content"
+						contentClassName: "portfolio__content",
 					}))}
 				/>
 			</section>

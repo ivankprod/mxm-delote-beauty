@@ -94,26 +94,30 @@ h3 {
 
 	margin: 0 auto;
 	padding: 0;
+}
 
-	& .content {
+.logo {
+	display: flex;
+}
+
+.link-instagram {
+	display: flex;
+
+	height: 26px;
+	width: 26px;
+
+	background-image: url("app/assets/svg/instagram.svg");
+	background-repeat: no-repeat;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 120px;
+	flex-grow: 1;
+	flex-shrink: 0;
+
+	&__section {
 		display: flex;
-		flex-direction: column;
-		gap: 120px;
-		flex-grow: 1;
-		flex-shrink: 0;
-	}
-
-	& .logo {
-		display: flex;
-	}
-
-	& .link-instagram {
-		display: flex;
-
-		height: 26px;
-		width: 26px;
-
-		background-image: url("app/assets/svg/instagram.svg");
-		background-repeat: no-repeat;
 	}
 }

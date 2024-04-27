@@ -1,124 +1,124 @@
 .content {
-	&__section {
-		display: flex;
-
-		&_first-screen {
-			align-items: center;
-			justify-content: center;
-
-			height: 927px;
-
-			&::before {
-				content: "";
-
-				display: block;
-				position: absolute;
-				inset: 0;
-
-				height: 1038px;
-
-				background-image: url("app/assets/images/bgc_home.jpg");
-				background-position: center top;
-
-				z-index: -1;
-			}
-
-			& .first-screen {
-				&__text {
-					margin-top: -70px;
-
-					font-size: 72px;
-					font-weight: 700;
-					line-height: 120%;
-					text-align: center;
-				}
-			}
-
-			& .mouse-down {
-				display: flex;
-				align-items: center;
-
-				position: absolute;
-
-				margin-top: 620px;
-
-				&__icon {
-					display: flex;
-
-					margin-right: 20px;
-				}
-
-				&__text {
-					font-weight: 700;
-					line-height: 140%;
-				}
-			}
-		}
-
-		&_about {
-			flex-direction: column;
-			align-items: center;
-
-			& .about {
-				&__text {
-					width: 856px;
-
-					margin-top: 60px;
-
-					font-size: 27px;
-					font-weight: 700;
-					line-height: 130%;
-					text-align: center;
-				}
-			}
-		}
-
-		&_services {
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-			gap: 44px;
-
-			& .card {
-				gap: 30px;
-
-				margin-bottom: 40px;
-			}
-		}
-
-		&_logotypes {
-			justify-content: center;
-			gap: 24px;
-
-			margin-bottom: 48px;
-
-			& .logotype {
-				display: flex;
+	&_home {
+		& .content__section {
+			&_first-screen {
 				align-items: center;
 				justify-content: center;
 
-				height: 144px;
-				width: 306px;
+				height: 927px;
 
-				opacity: 50%;
-			}
-		}
+				&::before {
+					content: "";
 
-		&_portfolio {
-			flex-direction: column;
-			gap: 80px;
+					display: block;
+					position: absolute;
+					inset: 0;
 
-			margin-bottom: 100px;
+					height: 1038px;
 
-			& .portfolio {
-				&__h1 {
-					font-size: 48px;
-					text-align: center;
+					background-image: url("app/assets/images/bgc_home.jpg");
+					background-position: center top;
+
+					z-index: -1;
 				}
 
-				&__content {
-					display: grid;
-					grid-template-columns: 1fr 1fr 1fr;
-					gap: 24px;
+				& .first-screen {
+					&__text {
+						margin-top: -70px;
+
+						font-size: 72px;
+						font-weight: 700;
+						line-height: 120%;
+						text-align: center;
+					}
+				}
+
+				& .mouse-down {
+					display: flex;
+					align-items: center;
+
+					position: absolute;
+
+					margin-top: 620px;
+
+					&__icon {
+						display: flex;
+
+						margin-right: 20px;
+					}
+
+					&__text {
+						font-weight: 700;
+						line-height: 140%;
+					}
+				}
+			}
+
+			&_about {
+				flex-direction: column;
+				align-items: center;
+
+				& .about {
+					&__text {
+						width: 856px;
+
+						margin-top: 60px;
+
+						font-size: 27px;
+						font-weight: 700;
+						line-height: 130%;
+						text-align: center;
+					}
+				}
+			}
+
+			&_services {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 44px;
+
+				& .card {
+					gap: 30px;
+
+					margin-bottom: 40px;
+				}
+			}
+
+			&_logotypes {
+				justify-content: center;
+				gap: 24px;
+
+				margin-bottom: 48px;
+
+				& .logotype {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					height: 144px;
+					width: 306px;
+
+					opacity: 50%;
+				}
+			}
+
+			&_portfolio {
+				flex-direction: column;
+				gap: 80px;
+
+				margin-bottom: 10px;
+
+				& .portfolio {
+					&__h1 {
+						font-size: 48px;
+						text-align: center;
+					}
+
+					&__content {
+						display: grid;
+						grid-template-columns: 1fr 1fr 1fr;
+						gap: 24px;
+					}
 				}
 			}
 		}
