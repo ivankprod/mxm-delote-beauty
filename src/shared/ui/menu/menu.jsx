@@ -15,7 +15,7 @@ export const MenuBar = () => {
 			<li className="nav__link">
 				<NavLink
 					end
-					to="/mxm-delote-beauty/"
+					to="/"
 					className={({ isActive }) =>
 						["nav__alink", isActive ? "nav__alink_active" : ""].join(" ")
 					}
@@ -25,7 +25,7 @@ export const MenuBar = () => {
 			</li>
 			<li className="nav__link">
 				<NavLink
-					to="/mxm-delote-beauty/masters"
+					to="/masters"
 					className={({ isActive }) =>
 						["nav__alink", isActive ? "nav__alink_active" : ""].join(" ")
 					}
@@ -35,7 +35,7 @@ export const MenuBar = () => {
 			</li>
 			<li className="nav__link">
 				<NavLink
-					to="/mxm-delote-beauty/cosmetics"
+					to="/cosmetics"
 					className={({ isActive }) =>
 						["nav__alink", isActive ? "nav__alink_active" : ""].join(" ")
 					}
@@ -54,7 +54,7 @@ export const MenuBar = () => {
 			</li>
 			<li className="nav__link">
 				<NavLink
-					to="/mxm-delote-beauty/discount"
+					to="/discount"
 					className={({ isActive }) =>
 						["nav__alink", isActive ? "nav__alink_active" : ""].join(" ")
 					}
@@ -74,7 +74,7 @@ export const MenuBar = () => {
 			</li>
 			<li className="nav__link">
 				<NavLink
-					to="/mxm-delote-beauty/contacts"
+					to="/contacts"
 					className={({ isActive }) =>
 						["nav__alink", isActive ? "nav__alink_active" : ""].join(" ")
 					}

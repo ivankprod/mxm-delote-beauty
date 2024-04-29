@@ -20,18 +20,20 @@ import MastersPage from "pages/masters";
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route
-			path="/mxm-delote-beauty"
+			path="/"
 			element={<Layout />}
 			errorElement={<ErrorPage />}
 		>
 			<Route element={<HomePage />} />
 			<Route index element={<HomePage />} />
 			<Route
-				path="/mxm-delote-beauty/masters"
+				path="/masters"
 				element={<MastersPage />}
 			/>
 		</Route>
-	)
+	), {
+		basename: "/mxm-delote-beauty/"
+	}
 );
 
 const App = () => {
