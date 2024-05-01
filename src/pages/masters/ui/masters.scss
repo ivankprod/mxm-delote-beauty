@@ -1,10 +1,10 @@
 .content {
 	&_masters {
 		& .content__section {
-			flex-direction: column;
-			gap: 100px;
-
 			&_masters {
+				flex-direction: column;
+				gap: 80px;
+
 				& .masters {
 					&__h1 {
 						font-size: 48px;

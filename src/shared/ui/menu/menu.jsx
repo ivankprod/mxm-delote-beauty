@@ -35,12 +35,12 @@ export const MenuBar = () => {
 			</li>
 			<li className="nav__link">
 				<NavLink
-					to="/cosmetics"
+					to="/prices"
 					className={({ isActive }) =>
 						["nav__alink", isActive ? "nav__alink_active" : ""].join(" ")
 					}
 				>
-					Косметика
+					Цены
 				</NavLink>
 			</li>
 			<li className="nav__link">

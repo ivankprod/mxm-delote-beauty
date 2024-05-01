@@ -1,0 +1,54 @@
+.content {
+	&_prices {
+		& .content__section {
+			&_prices {
+				flex-direction: column;
+				gap: 80px;
+
+				margin-bottom: 30px;
+
+				& .prices {
+					&__h1 {
+						font-size: 48px;
+						text-align: center;
+					}
+
+					&__list {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+
+						&-entry {
+							display: flex;
+							flex-direction: column;
+							gap: 40px;
+
+							& .list-entry {
+								&__block {
+									width: 526px;
+
+									border-bottom: 1px solid #ffffff80;
+
+									& .block {
+										&__caption {
+											display: flex;
+											justify-content: space-between;
+
+											font-size: 27px;
+											font-weight: 700;
+											line-height: 130%;
+										}
+
+										&__description {
+											margin: 10px 0 20px 0;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+.content {
+	&_contacts {
+		& .content__section {
+			&_contacts {
+				flex-direction: column;
+				gap: 80px;
+
+				margin-bottom: 30px;
+
+				& .contacts {
+					&__h1 {
+						font-size: 48px;
+						text-align: center;
+					}
+
+					&__entries {
+						display: flex;
+						justify-content: space-between;
+
+						& .entry {
+							display: flex;
+							flex-direction: column;
+							gap: 15px;
+
+							list-style-type: none;
+
+							&__title {
+								font-size: 24px;
+								font-weight: 700;
+								line-height: 120%;
+
+								margin-bottom: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
