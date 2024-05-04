@@ -28,10 +28,10 @@ jobs:
       - name: Install deps & build
         run: |
           touch .env.production
-          echo API_URL=$API_URL >> .env.production
+          echo VITE_API_URL=$VITE_API_URL >> .env.production
           npm i && npm run build
         env:
-          API_URL: ${{ vars.API_URL }}
+          VITE_API_URL: ${{ vars.API_URL }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
