@@ -1,2 +1,2 @@
-export * from "./home-services";
-export * from "./home-portfolio";
+export * as servicesModel from "./home-services";
+export * as portfolioModel  from "./home-portfolio";

@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 
 import ScopeContext from "app/context";
 
-import { HomeServices, HomePortfolio } from "pages/home/model";
+import { servicesModel, portfolioModel } from "pages/home/model";
 
 import Card, { cardModel } from "widgets/card";
 import Tabs from "widgets/tabs";
@@ -24,8 +24,12 @@ import "./home.scss";
 export const HomePage = () => {
 	const { scope, setScope } = useContext(ScopeContext);
 
+	const [services, fetchServices] = servicesModel.useServices();
+
 	useEffect(() => {
 		setScope("home");
+
+		fetchServices();
 	}, []);
 
 	return (
@@ -65,7 +69,7 @@ export const HomePage = () => {
 				</p>
 			</section>
 			<section className="content__section content__section_services">
-				{HomeServices.map(({ id, title, image }) => (
+				{services.map(({ id, title, image }) => (
 					<Card
 						key={id}
 						type={cardModel.CARD_TYPE.bordered}
@@ -115,7 +119,7 @@ export const HomePage = () => {
 			<section className="content__section content__section_portfolio">
 				<h1 className="portfolio__h1">Наши работы</h1>
 				<Tabs
-					data={HomePortfolio.map((portfolio) => ({
+					data={portfolioModel.HomePortfolio.map((portfolio) => ({
 						id: portfolio.id,
 						title: portfolio.title,
 						content: portfolio.images.map((image) => (
@@ -132,7 +136,7 @@ export const HomePage = () => {
 								}
 							/>
 						)),
-						contentClassName: "portfolio__content",
+						contentClassName: "portfolio__content"
 					}))}
 				/>
 			</section>
