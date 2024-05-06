@@ -16,6 +16,7 @@ const mapCustomError = {
 
 /**
  * Получение локализованного текста ошибки
+ * @hook
  *
  * @param {number} status - статус ошибки
  * @returns {string}

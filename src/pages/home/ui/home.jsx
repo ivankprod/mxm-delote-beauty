@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import ScopeContext from "app/context";
 
@@ -23,7 +23,6 @@ import "./home.scss";
  */
 export const HomePage = () => {
 	const { scope, setScope } = useContext(ScopeContext);
-
 	const [services, fetchServices] = servicesModel.useServices();
 
 	useEffect(() => {
@@ -69,7 +68,7 @@ export const HomePage = () => {
 				</p>
 			</section>
 			<section className="content__section content__section_services">
-				{services.map(({ id, title, image }) => (
+				{services.slice(0, servicesModel.SERVICES_PER_PAGE).map(({ id, title, image }) => (
 					<Card
 						key={id}
 						type={cardModel.CARD_TYPE.bordered}
@@ -85,6 +84,10 @@ export const HomePage = () => {
 						<p className="card__caption">{title}</p>
 					</Card>
 				))}
+				{/* services.length > servicesModel.SERVICES_PER_PAGE &&
+					pagination here
+				*/
+				}
 			</section>
 			<section className="content__section content__section_logotypes">
 				<div className="logotype">
@@ -136,7 +139,7 @@ export const HomePage = () => {
 								}
 							/>
 						)),
-						contentClassName: "portfolio__content"
+						contentClassName: "portfolio__content",
 					}))}
 				/>
 			</section>
