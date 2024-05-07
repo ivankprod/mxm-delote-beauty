@@ -1,4 +1,5 @@
 import { useState } from "react";
+import clsx from "clsx";
 import { v4 as uuid } from "uuid";
 
 import { getServices } from "pages/home/api";
@@ -21,28 +22,23 @@ const initialHomeServices = [
 		id: uuid(),
 		title: "Парикмахерские услуги",
 		image: imgServicesHairdress
-	},
-	{
+	}, {
 		id: uuid(),
 		title: "Маникюр",
 		image: imgServicesManicure
-	},
-	{
+	}, {
 		id: uuid(),
 		title: "Педикюр",
 		image: imgServicesPedicure
-	},
-	{
+	}, {
 		id: uuid(),
 		title: "Косметология",
 		image: imgServicesCosmetology
-	},
-	{
+	}, {
 		id: uuid(),
 		title: "Эстетист по телу",
 		image: imgServicesBodyEsthetician
-	},
-	{
+	}, {
 		id: uuid(),
 		title: "Визаж",
 		image: imgServicesMakeUp
@@ -61,21 +57,53 @@ export const SERVICES_PER_PAGE = initialHomeServices.length;
  * @hook
  */
 export const useServices = () => {
-	const [services, setServices] = useState(initialHomeServices);
+	const [services, setServices] = useState({
+		data: initialHomeServices,
+		dataPage: null,
+		dataCount: null
+	});
 
-	const fetchServices = async (page = 1) => {
+	const fetchServices = async (page = 0) => {
 		const newServices = await getServices(page);
 
 		if (newServices) {
-			setServices((oldServices) =>
-				newServices.map((service, index) => {
-					const oldService = oldServices[limitedKey(index, oldServices.length - 1)];
-
-					return { ...service, image: oldService.image };
-				})
-			);
+			setServices((oldServices) => {
+				return {
+					data: newServices.data.map((service, index) => {
+						return {
+							...service,
+							image: oldServices.data[
+								limitedKey(index, oldServices.data.length - 1)
+							].image
+						};
+					}),
+					dataPage: newServices.dataPage,
+					dataCount: newServices.dataCount
+				};
+			});
 		}
 	};
 
-	return [services, fetchServices];
+	const initPagination = () => {
+		let content = [];
+
+		for (let i = 1; i <= Math.floor(services.dataCount / SERVICES_PER_PAGE); i++) {
+			content.push(
+				<li key={`services-page-${i}-${(new Date).toISOString()}`}>
+					<button
+						disabled={i === services.dataPage}
+						className={clsx({
+							"pagination__button": true,
+							"pagination__button_active": i === services.dataPage
+						})}
+						onClick={() => fetchServices(i)}
+					>{i}</button>
+				</li>
+			);
+		}
+
+		return <ul className="pagination">{content}</ul>;
+	};
+
+	return [services, fetchServices, initPagination];
 };

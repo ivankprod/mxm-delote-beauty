@@ -23,12 +23,12 @@ import "./home.scss";
  */
 export const HomePage = () => {
 	const { scope, setScope } = useContext(ScopeContext);
-	const [services, fetchServices] = servicesModel.useServices();
+	const [services, fetchServices, initPagination] = servicesModel.useServices();
 
 	useEffect(() => {
 		setScope("home");
 
-		fetchServices();
+		fetchServices(1);
 	}, []);
 
 	return (
@@ -68,7 +68,7 @@ export const HomePage = () => {
 				</p>
 			</section>
 			<section className="content__section content__section_services">
-				{services.slice(0, servicesModel.SERVICES_PER_PAGE).map(({ id, title, image }) => (
+				{services.data.map(({ id, title, image }) => (
 					<Card
 						key={id}
 						type={cardModel.CARD_TYPE.bordered}
@@ -84,10 +84,9 @@ export const HomePage = () => {
 						<p className="card__caption">{title}</p>
 					</Card>
 				))}
-				{/* services.length > servicesModel.SERVICES_PER_PAGE &&
-					pagination here
-				*/
-				}
+				{services.dataCount > servicesModel.SERVICES_PER_PAGE && (
+					initPagination()
+				)}
 			</section>
 			<section className="content__section content__section_logotypes">
 				<div className="logotype">
@@ -139,7 +138,7 @@ export const HomePage = () => {
 								}
 							/>
 						)),
-						contentClassName: "portfolio__content",
+						contentClassName: "portfolio__content"
 					}))}
 				/>
 			</section>
